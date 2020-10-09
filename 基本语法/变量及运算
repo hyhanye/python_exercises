@@ -1,0 +1,120 @@
+# 变量
+## 变量的类型
+* 整型：通常被称为是整型或整数，是正或负整数，不带小数点。
+
+* 浮点型：浮点数也就是小数，之所以称为浮点数，是因为按照科学记数法表示时，一个浮点数的小数点位置是可变的，浮点数除了数学写法（如123.456）之外还支持科学计数法（如1.23456e2）。
+
+* 字符串型：字符串是以单引号或双引号括起来的任意文本，比如'hello'和"hello",字符串还有原始字符串表示法、字节字符串表示法、Unicode字符串表示法，而且可以书写成多行的形式（用三个单引号或三个双引号开头，三个单引号或三个双引号结尾）。
+
+* 布尔型：布尔值只有True、False两种值，要么是True，要么是False，在Python中，可以直接用True、False表示布尔值（请注意大小写），也可以通过布尔运算计算出来（例如3 < 5会产生布尔值True，而2 == 1会产生布尔值False）。
+
+## 变量命名规则
+1. 模块: 
+   * 模块尽量使用小写命名，首字母保持小写，尽量不要用下划线(除非多个单词，且数量不多的情况)。
+   ```python 
+   import numpy 
+   import html_parser 
+   ```
+2. 类名:
+   * 类名使用驼峰(CamelCase)命名风格，首字母大写。
+   
+   ```python
+   class Test():
+       pass
+   
+   class FinalTest():
+       pass 
+   ```
+   * 私有类可用一个下划线开头。
+   ```python
+   class _PrivateTest():
+       pass
+   ```
+   
+3. 函数：
+   * 函数名一律小写，如有多个单词，用下划线隔开。
+   ```python
+   def function():
+       pass
+   
+   def test_function():
+       pass
+   ```
+   * 私有函数在函数前加一个下划线_。
+   ```python
+   def _private_function():
+       pass
+   ```
+4. 变量名：
+   * 变量名小写, 如有多个单词，用下划线隔开。
+   ```python
+   variable = 0
+   variable_name = ''
+   ```
+   
+5. 常量：
+   * 常量使用以下划线分隔的大写命名。
+   ```python
+   MAX_CONSTANT = 100
+   ```
+# 运算符
+## 赋值
+```python
+a = 10
+b = 3
+a += b        # 相当于：a = a + b
+a *= a + 2    # 相当于：a = a * (a + 2)
+```
+## 数学运算
+```python
+import math
+a = 10.41
+b = 3
++a
+-a
+a + b
+a - b
+a * b   # a乘以b
+a ** b    # a的b次方
+a / b   # a除以b
+a // b  # a除以b后取整
+a % b   # a除以b后取余数
+abs(a)  # |a|：取a的绝对值
+round(a, 1) # 取a的小数点后一位
+math.ceil(a) # 向上取整,结果为11
+math.floor(a) # 向下取整，结果为10
+math.exp(a) # 自然指数e的a次方
+math.log(a) # 以e为底的a的对数
+math.log10(a) # 以10为底的a对数
+math.sqrt(a) # a的平方根
+```
+
+## 位运算
+```python
+a = 0x01
+b = 0x00
+~a            # 位反转
+a & b         # 与
+a and b       # 同上
+a | b         # 或
+a or b        # 同上
+a ^ b         # 异或XOR
+a << b        # 向左位移b位
+a >> b        # 向右位移b位
+```
+
+## 逻辑运算符
+```python
+a = 10
+b = 11
+a == b           # a等于b
+a != b           # a不等于b
+a < b            # a小于b
+a > b            # a大于b
+a <= b           # a小于等于b
+a >= b           # a大于等于b
+a is b           # a是b(指向内存中同一位置)
+a is not b       # a不是b（内存中指向不同位置）
+a in b           # a包含于b(b是数字列，list或者tuple)
+a not in b       # a不包含于b
+```
