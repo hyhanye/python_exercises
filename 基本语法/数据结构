@@ -1,0 +1,123 @@
+# 列表(list)
+## 关于list
+List （列表）是 Python 内置的一种数据类型。 它是一种有序的集合，可以随时添加和删除其中的元素。
+## 创建list
+```python
+members = ['小明', '小红', '小强']
+```
+其实列表就是用中括号 [] 括起来的数据，里面的每一个数据就叫做元素。每个元素之间使用逗号分隔。
+
+而且列表的数据元素不一定是相同的数据类型。
+比如：
+```python
+members = ['小明', '小红', 1.234]
+```
+里的元素就有字符串类型与整数类型。
+
+## 访问list
+### 通过列表的下标索引访问单个元素：
+```python
+members = ['小明', '小红', '小强']
+print(members[0])
+print(members[1])
+```
+在python中，下标的索引是从0开始的。
+
+所以在上面的代码中索引0代表的是小明，索引1代表的是小红
+
+### 访问多个元素
+列表也可以一次性访问多个元素。
+
+在访问多个元素时，引用时的区间为左闭右开区间。
+```python
+members = ['小明', '小红', '小强']
+print(members[0:2]) # 访问第一到第二个元素
+print(members[:2])  # 同上
+print(members[0:])  # 访问第一个元素到最后一个元素
+print(members[:])   # 访问所有元素
+print(members[1:2]) # 访问第二个元素
+```
+### 更新列表
+可以通过索引对列表的数据项进行修改或更新。
+```python
+members = ['小明', '小红', '小强']
+print(members)
+members[0] = '小白'
+print(members)
+```
+使用append()方法来添加列表元素，新添加的元素会在列表最末尾。
+```python
+members = ['小明', '小红', '小强']
+print(members)
+members.append('小白')
+print(members)
+```
+### 删除列表元素
+当想从列表中去除某个元素时，可以使用索引删除指定元素。
+```python
+members = ['小明', '小红', '小强']
+print(members)
+del members[2]
+print(members)
+```
+## 列表相关的运算符
+列表常用的运算符如下
+```python
+len([1, 2, 3])         # 结果为3，len()为显示列表元素个数
+[1, 2, 3] + [4, 5, 6]  # 用+将列表连接为一个列表： [1, 2, 3, 4, 5, 6]
+[1]*4                  # 将列表复制4次： [1, 1, 1, 1]
+2 in [1, 2, 3]         # 判断2是否在列表中
+for x in [1, 2, 3]: print(x)  # 从索引0开始迭代， x依次为1，2，3
+```
+## 列表常用函数
+```python
+l1 = [1, 2, 3, 4, 5]
+l2 = [6, 7, 8]
+obj = 2
+index = 3
+len(l1)                 # 列表l1中的元素数量
+max(l1)                 # 列表l1中的最大值
+min(l1)                 # 列表l1中的最小值
+l1.append(obj)          # 在列表最末尾添加元素2
+l1.count(obj)           # 统计2在l1中出现的次数
+l1.index(obj)           # 找出2在l1中的索引的位置
+l1.insert(index, obj)   # 在索引3的地方插入2
+l2.pop(index)           # 将索引3处的值从列表中删除
+```
+# 元组(tuple)
+
+## 关于tuple
+tuple和List 非常类似，但是tuple并没有类似list中append一样的更新列表的方法，所以tuple一旦初始化就不能修改。
+
+在需要
+## 创建tuple
+使用括号来创建元组并初始化
+```python
+tuple1 = ('元素1', '元素2')
+tuple2 = ()                   # 空元组
+tuple3 = ('只有一个',)         # 只有一个元素的元组
+```
+
+## 访问tuple
+访问元组时的下标索引也是从0开始。
+```python
+x = ('元素1', '元素2')
+print(x[0])
+print(x[1])
+```
+## 有关tuple的函数
+```python
+len((1, 2, 3))
+max((1, 2, 3))
+min((1, 2, 3))
+(1, 2, 3) + (4, 5, 6)
+('hi',)*4
+3 in (1, 2, 3)
+for x in (1, 2, 3): print(x)
+```
+
+# 字典(dict)
+## 关于dict
+dict（全称dictionary）是python内置的key-value(键-值)存储结构，具有快速查找的特点。
+Python 内置了 字典（dict），dict 全称 dictionary，如果学过 Java ，字典就相当于 JAVA 中的 map，使用键-值（key-value）存储，具有极快的查找速度。
+
