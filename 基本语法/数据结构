@@ -121,3 +121,99 @@ for x in (1, 2, 3): print(x)
 dict（全称dictionary）是python内置的key-value(键-值)存储结构，具有快速查找的特点。
 Python 内置了 字典（dict），dict 全称 dictionary，如果学过 Java ，字典就相当于 JAVA 中的 map，使用键-值（key-value）存储，具有极快的查找速度。
 
+## dict的创建
+字典是一种可变数据结构，并且可以存储任意数据对象。
+字典的每个键和值之间用冒号（:）分割，每个键值对之间用逗号（,）分割，整个字典包括在花括号({})中。
+```python
+dictionary = {'key1':'value', 'key2':3, 3:'33', 4:333}
+```
+键必须唯一，不能有重复；键所对应的值则不受此限制，可以有重复。
+
+值可以取任意的数据类型并在之后修改，键则在创建后不可更改。
+
+## 访问dict
+使用键来快速访问对应的值。
+```python
+members = {1001: '小明', 1002: '小红', 1003: '小白'}  # 键为学号，值为该学号所对应的人名
+print(members[1001])       # 输出： 小明
+print(members[1003])       # 输出： 小白
+```
+
+## 修改dict
+```python
+members = {1001: '小明', 1002: '小红', 1003: '小白'}
+print(members)
+
+members[1001] = '小王'      # 将学号1001对应的人修改为小王
+print(members)
+
+members[1004] = '小强'      # 添加学号为1004的小强去 
+print(members)
+```
+
+## 删除dict
+使用del删除dict中的某个元素或者整个dict。
+```python
+members = {1001: '小明', 1002: '小红', 1003: '小白'}
+print(members)
+
+del members[1002]         # 删除学号为1002的元素
+print(members)
+
+del members               # 删除整个dict
+```
+
+也可以通过clear()方法来清除字典中的所有元素。
+```python
+members = {1001: '小明', 1002: '小红', 1003: '小白'}
+print(members)
+
+members.clear()       # 清除所有元素，使之成为空字典
+print(members)
+```
+
+## dict的特性
+* dict是不允许一个键创建两次的，但是在创建dict时如果出现了一个键值赋予了两次，会以最后一次赋予的值为准。
+```python
+members = {1001: '小明', 1002: '小红', 1003: '小白', 1001: '小黄'}
+print(members)
+```
+* dict的键必须不可变，但键可以用数字，字符串或元组充当，但是不能使用列表。
+* dict内部存放的顺序和key放入的顺序之间没有任何关系。
+* dict的优点：查找和插入的速度极快，不会随着key的增加而变慢; dict的缺点：需要占用的内存比list多。
+
+# 集合(set)
+## 关于set
+python中的set是一个无序不重复的元素集，基本功能包括消除重复元素与关系测试。
+## set的创建
+创建一个set时,需要提供一个list做为输入
+```python
+s1 = set([1, 2, 3, 4, 5, 6, 7, 8])
+print(s1)
+
+s2 = set([1, 2, 3, 4, 5, 6, 1, 2, 5, 6, 7, 8])
+print(s2)
+```
+
+## set的更新
+通过add()方式可以添加元素到set中。
+```python
+s1 = set([1, 2, 3, 4, 5, 6])
+print(s1)
+
+s1.add(7)               # 添加新的元素7
+print(s1)
+
+s1.add(7)               # 再次添加元素7，因为set中不能有重复元素，所以s1没有任何变化。
+print(s1)
+```
+
+## 删除set的元素
+使用remove()方法可以删除set中的元素
+```python
+s1 = set([1, 2, 3, 4, 5, 6])
+print(s1)
+
+s1.remove(2)
+print(s1)
+```
